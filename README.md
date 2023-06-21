@@ -1,6 +1,6 @@
 # Goal of this POC
 
-This poc is here to add a sample code to use the (openapi-generator)[https://github.com/OpenAPITools/openapi-generator]
+This poc is here to add a sample code to use the [openapi-generator](https://github.com/OpenAPITools/openapi-generator)
 This mostly to try the `null` api property handling
 
 ## First terminal
@@ -29,3 +29,21 @@ export interface ExampleView {
   date: string;
 }
 ```
+
+## Command to generate the code
+
+```sh
+$ openapi-generator-cli generate -i http://localhost:3000/api-json -g typescript-angular -o ./generated-angular-code/
+```
+
+- `openapi-generator-cli` : is the npm tool / package in dev dependency created by the openapi-generator team `https://openapi-generator.tech/#try` > `Try via npm`
+- `-i swaggerDefinitionFile` : your swagger definition file, in this case is from ou localhost
+- `-g codeWantedToBeGenerated` : the `code generator plugin` you want to use. Lot of generator available : `https://openapi-generator.tech/docs/generators` > `typescript-angular`
+- `-o theOutputForGeneratedCode` : the output for the generated code
+
+# Useful links
+
+- https://openapi-generator.tech/docs/generators/typescript-angular
+- https://openapi-generator.tech/#try
+- https://openapi-generator.tech/docs/generators
+- https://github.com/OpenAPITools/openapi-generator
